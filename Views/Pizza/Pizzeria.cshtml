@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    Layout = "_Layout";
+    ViewData["Title"] = "la mia pizzeria model";
+}
+
+@model la_mia_pizzeria_static.Models.pizzaList;
+
+<h2> @Html.ActionLink("Crea La Mia Pizza", "CreaPizza", "Pizza")</h2>
+
+<div>
+    @foreach(Pizza p in Model.ListaPizze)
+    {
+        <div class="col-4 p-2 mb-3 card">
+
+                    <div class="ciao">
+
+                        <img src="~/img/pizza.jpg" />
+                    </div>
+
+                    <h2> Nome : @p.Nome</h2>
+                    <br />
+                    <span> Descrizione : @p.Desc</span>
+                    <br />
+                    <span> Prezzo : @p.Prezzo €</span>
+                    <br />
+
+                </div>
+    }
+</div>
+
