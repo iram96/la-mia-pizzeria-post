@@ -8,10 +8,10 @@
 
 @model la_mia_pizzeria_static.Models.Pizza;
 
-  @using (Html.BeginForm("CreaSchedaPizza", "Pizza", FormMethod.Post))
+  @using (Html.BeginForm("CreaSchedaPizza", "Pizza", FormMethod.Post ))
     {
 
-       // @Html.ValidationSummary()
+        @Html.ValidationSummary()
         <table cellpadding="0" cellspacing="0" class="center">
             <tr>
                 <th colspan="2" align="center">Dettagli Pizza</th>
@@ -37,6 +37,7 @@
                 <td>Prezzo: </td>
                 <td>
                     @Html.TextBoxFor(m => m.Prezzo)
+                    @Html.ValidationMessage("Prezzo")
                 </td>
             </tr>
             
